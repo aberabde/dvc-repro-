@@ -25,7 +25,7 @@ train:
 evaluate:
   cmd: python src/evaluate.py model.pkl data/Fitest scores.json
   deps:
-  - path: data/fitest
+  - path: data/Fitest
     md5: e4521298997bc1f339ed0e62ba05482d.dir
   - path: model.pkl
     md5: 2d7a119e243bc7e263ca855ff16a51a5

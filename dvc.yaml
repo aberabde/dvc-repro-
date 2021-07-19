@@ -19,7 +19,7 @@ stages:
   evaluate:
     cmd: python src/evaluate.py model.pkl data/Fitest scores.json
     deps:
-    - data/fitest
+    - data/Fitest
     - model.pkl
     - src/evaluate.py
     metrics:
