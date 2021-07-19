@@ -1,0 +1,27 @@
+stages:
+  explore:
+    cmd: python src/explore.py
+    deps:
+    - data/Ad.csv
+    - src/explore.py
+    outs:
+    - data/Exploration
+  train:
+    cmd: python src/train.py model.pkl
+    deps:
+    - data/Ad.csv
+    - src/train.py
+    params:
+    - train.random_state
+    - train.test_size
+    outs:
+    - model.pkl
+  evaluate:
+    cmd: python src/evaluate.py model.pkl data/Fitest scores.json
+    deps:
+    - data/fitest
+    - model.pkl
+    - src/evaluate.py
+    metrics:
+    - scores.json:
+        cache: false
