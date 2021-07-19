@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
           
           # Pull dataset with DVC 
-          dvc pull
+          dvc pull data/Ad.csv
           
           # Reproduce pipeline if any changes detected in dependencies
           dvc repro 
