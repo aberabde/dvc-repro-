@@ -40,7 +40,7 @@ mse = np.sqrt(metrics.mean_squared_error(y_test,
 
 #Calcul du R-squared
 r2 = metrics.r2_score(y_test, y_pred)    
-
+print("before dump")
 with open(scores_file, 'w') as outfile:
     json.dump({ "MSE": mse, "R2":r2}, outfile)                                  
     
