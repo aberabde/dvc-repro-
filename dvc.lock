@@ -18,19 +18,19 @@ train:
   params:
     params.yaml:
       train.random_state: 42
-      train.test_size: 0.2
+      train.test_size: 0.3
   outs:
   - path: model.pkl
-    md5: 2d7a119e243bc7e263ca855ff16a51a5
+    md5: a0856949fd56163a786973bfb786e620
 evaluate:
   cmd: python src/evaluate.py model.pkl data/Fitest scores.json
   deps:
   - path: data/Fitest
-    md5: e4521298997bc1f339ed0e62ba05482d.dir
+    md5: f3ac6cf6592fccefaffb80aec98a8aae.dir
   - path: model.pkl
-    md5: 2d7a119e243bc7e263ca855ff16a51a5
+    md5: a0856949fd56163a786973bfb786e620
   - path: src/evaluate.py
     md5: 2424f6c2bd67f145a4c436d36cb39263
   outs:
   - path: scores.json
-    md5: 9d66c3e41bb07898420235c383aeb6b8
+    md5: 77d5d2878fc3b65ecd8953bb7945e3e7
